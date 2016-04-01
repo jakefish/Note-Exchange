@@ -1,0 +1,14 @@
+<head>
+	<title>Course</title>
+</head>
+{% extends "base.html" %}
+{% block content %}
+<meta charset="utf-8">
+<form action='{% url "course" %}' method='post' class ="form" enctype="multipart/form-data">
+		{% csrf_token %}
+		<table id = "DocumentForm">
+			{{ document_form.as_table }}
+		</table>
+		<input type='submit' value='submit' id ="save-button">
+	</form>
+{% endblock %}

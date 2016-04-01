@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+{% load staticfiles %}
+<link rel = "stylesheet" type="text/css" href="{% static 'notes_app/login_style.css' %}"/>
+  <head>
+    <meta charset="utf-8">
+      <title>Login</title>
+  </head>
+{% block content %}
+<body>
+<div class="container">
+	<section id="content">
+		<form id="login_form" method="post" action="{% url "user_login" %}">
+      {% csrf_token %}
+			<h1>Login Form</h1>
+			<div>
+				Username: <input type="text" name="username" value="" size="50" />
+			</div>
+			<div>
+				Password: <input type="password" name="password" value="" size="50" />
+			</div>
+			<div>
+				<input type="submit" value="Log in" />
+				<a href="{% url "register" %}">Register</a>
+			</div>
+		</form><!-- form -->
+	</section><!-- content -->
+</div><!-- container -->
+</body>
+{% endblock %}
+</html>

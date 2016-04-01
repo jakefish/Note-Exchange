@@ -1,0 +1,16 @@
+<head>
+  <title>Upload Notes</title>
+</head>
+{% extends "base.html" %}
+{% block content %}
+  <div id="top">
+    <br/>
+    </div>
+  <form action='{% url "upload_file" %}' method='post' class ="form" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table id ="FileForm">
+      {{ form.as_table }}
+    </table>
+    <input type='submit' value='submit' id ="save-button">
+  </form>
+{% endblock %}

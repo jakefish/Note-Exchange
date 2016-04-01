@@ -1,0 +1,11 @@
+{% if documents.count > 0 %}
+
+{% for document in documents %}
+  <li><a href="{{ document.object.get_absolute_url }}">{{ document.object.document_subject }}</a></li>
+{% endfor %}
+
+{% else %}
+
+<li> None to show!!</li>
+
+{% endif %}

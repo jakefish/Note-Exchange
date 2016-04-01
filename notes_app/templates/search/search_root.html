@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+  <form type="get" action="/search/">
+    <input type="text" name="q">
+      <button type="submit">Search</button>
+  </form>
+  <p>Your query "{{ search_query }} has returned {{ documents.count }} result{{ documents|pluralize }}"</p>
+  {% for document in documents %}
+    <h1>{{ document.course }}</h1>
+    <p>
+      {{ document.subject_name }}
+    </p>
+  {% endfor %}
+{% endblock %}

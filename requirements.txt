@@ -1,0 +1,5 @@
+Django==1.8.2
+django-haystack==2.4.1
+pefile==1.2.10.post114
+python-ptrace==0.8.1
+Whoosh==2.7.3

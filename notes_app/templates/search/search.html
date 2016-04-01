@@ -1,0 +1,73 @@
+<head>
+  <title>Search</title>
+</head>
+{%extends "base.html"%}
+{% block content %}
+<h2>Search</h2>
+<legend></br></legend></br>
+<div classglyphicon glyphicon-off="col-sm-50 col-md-50"id="search-box">
+  <!-- Search form -->
+  <form method="get" action="/search/"class="navbar-form"role="search">
+    <div class="input-group">
+    <input type="text" name="q"class="form-control" placeholder="Search"
+    id="srch-term">
+    <div id = "search-buttons">
+        <ul>
+          <li class="buttons">
+            <button class="btn btn-success" type="submit">
+              <i class="glyphicon glyphicon-search"></i> Search
+            </button>
+          <li class = "buttons" id="upload">
+            <a href='{% url "doc_form" %}' role="button">
+            <button class="btn btn-default"><i class="glyphicon glyphicon-upload"></i> Upload</a>
+             </button>
+          </li>
+        </ul>
+    </div>
+    </div>
+        {% if query and user.is_authenticated %}
+        <div class="panel panel-default" id="results-container">
+          <div class = "panel-heading">
+            <span id = "panel-title">Results</span>
+          </div>
+        </br>
+        <!-- Display Search Results -->
+        <div class="panel-body">
+            <table cellspacing="30" id ="search-table" class="table">
+              <tr class ="search-row">
+                <td class="title">Course</td>
+                <td class="title">Subject Name</td>
+                <td class="title">Subject Number</td>
+                <td class="title">Title</td>
+                <td class="title">Description</td>
+                <td class="title">Date Uploaded</td>
+              </tr>
+              {% for result in page.object_list %}
+                {% if forloop.counter|divisibleby:2 %}
+                    <tr class ="search-row">
+                {% else %}
+                    <tr class="active">
+                {% endif %}
+                <td align = "center"><a href="{{ result.object.get_absolute_url }}">{{ result.object.course }}</a></td>
+                <td align = "center"><a href="{{ result.object.get_absolute_url }}">{{ result.object.subject_name }}</a></td>
+                <td align = "center"><a href="{{ result.object.get_absolute_url }}">{{ result.object.subject_number }}</a></td>
+                <td align = "center"><a href="{{ result.object.get_absolute_url }}">{{ result.object.title }}</a></td>
+                <td align = "center"><a href="{{ result.object.get_absolute_url }}">{{ result.object.description }}</a></td>
+                <td align = "center"><a href="{{ result.object.get_absolute_url }}">{{ result.object.pub_date }}</a></td>
+              </tr>
+              {% empty %}
+              <p>No results found.</p>
+              {% endfor %}
+          </table>
+        </div>
+          </div>
+          {% else %}
+            {% if not user.is_authenticated %}
+            <div class="alert alert-warning" role="alert" id="search-warning">
+              <p>*** Login is required to search.***</p>
+              </div>
+            {% endif %}
+          {% endif %}
+  </form>
+</div>
+{% endblock %}

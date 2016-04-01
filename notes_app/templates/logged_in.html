@@ -1,0 +1,27 @@
+{%extends "base.html"%}
+{%block content%}
+	<h1>Home</h1>
+	<legend></legend>
+	<div id="img-container">
+	  <img src="https://go.cmich.edu/PublishingImages/pageheaders/Visit.jpg" id="jumbotron-img">
+	</div>
+	<div id="jumbotron-container">
+			<div class="jumbotron">
+			<div id="img-containerr">
+				<a href="{% url 'doc_form'%}">
+					<div class="pics">
+						<img src="http://icons.iconarchive.com/icons/pelfusion/flat-folder/256/Upload-Folder-icon.png"class="search-icon"><h2>Share</h2>
+					</div></a>
+				<a href="{% url 'haystack_search' %}">
+				<div class="pics">
+					<img src="http://icons.iconarchive.com/icons/blackvariant/button-ui-system-apps/256/Preview-2-icon.png"class="search-icon">
+					<h2>Search Now</h2>
+				</div>
+				</a>
+			</div>
+		</div>
+	<div id="home-logo-container">
+		<img src="https://bulletins.cmich.edu/images/CMU-wdmk.png"id="cmu-logo">
+	</div>
+{% endblock %}
+

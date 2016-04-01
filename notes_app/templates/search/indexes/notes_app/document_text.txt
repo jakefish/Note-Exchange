@@ -1,0 +1,7 @@
+{{ object.course }}
+{{ object.subject_name }}
+{{ object.subject_number }}
+{{ object.title }}
+{{ object.description }}
+{{ object.pub_date }}
+{{ object.body }}
