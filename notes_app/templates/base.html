@@ -7,9 +7,9 @@
         <link rel = "stylesheet" type="text/css" href="{% static "notes_app/style.css" %}"/>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <script type="text/javascript" src="{{ STATIC_URL }}/jquery-2.1.1.min.js"></script>
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="{{ STATIC_URL }} /static/jquery-2.1.1.min.js"></script>
-        <script type="text/javascript" src="{{ STATIC_URL }} /static/ajax.js"></script>
+        <script type="text/javascript" src="{{ STATIC_URL }}/ajax.js"></script>
     </head>
     <body>
         <div class="container">
@@ -25,7 +25,7 @@
                 <span class="icon-bar"></span>
               </button>
               <a href='{% url "main" %}'>
-              <img src="http://www.greenhousedata.com/images/uploads/paper_pencil_icon.png"id="logo" > 
+              <img src="http://www.greenhousedata.com/images/uploads/paper_pencil_icon.png"id="logo" >
               </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -41,7 +41,7 @@
                     <a href='{% url "user_login" %}'>
                       <button type="button" class="btn btn-default"id="sign-in-btn">Sign in</button>
                   </a>
-                </li>                                
+                </li>
                 <li>
                   <a href="{% url "register" %}">
                     <button type="button" class="btn btn-primary">Register</button>
@@ -51,7 +51,7 @@
                     <a href='{% url "logout" %}'>
                      <button type="button" class="btn btn-danger">Logout</button>
                   </a>
-                </li> 
+                </li>
                   {% endif %}
               </ul>
             </div><!-- /.navbar-collapse -->
