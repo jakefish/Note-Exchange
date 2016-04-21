@@ -51,6 +51,7 @@ INSTALLED_APPS = (
     'notes_app',
     'haystack',
     'whoosh',
+    'social_auth',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -60,6 +61,8 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'social_auth.backends.facebook.FacebookBackend',
+    'django.contrib.auth.backends.ModelBackend',
 )
 
 ROOT_URLCONF = 'note_exchange.urls'
@@ -96,3 +99,14 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT=os.path.join(PROJECT_ROOT, 'static')
+
+
+FACEBOOK_APP_ID='1161479200538439'
+FACEBOOK_API_SECRET='79942e89fa911ac5277c6185e9c07a5a'
+FACEBOOK_EXTENDED_PERMISSIONS = ['email']
+FACEBOOK_PROFILE_EXTRA_PARAMS = {'locale': 'ru_RU'}
+
+LOGIN_URL          = '/main/user_login/'
+LOGIN_REDIRECT_URL = '/main/'
+LOGIN_ERROR_URL    = 'register'
+
