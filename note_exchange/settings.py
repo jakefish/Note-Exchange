@@ -57,15 +57,12 @@ ROOT_URLCONF = 'note_exchange.urls'
 WSGI_APPLICATION = 'note_exchange.wsgi.application'
 
 
-
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
 
 
 LANGUAGE_CODE = 'en-us'
@@ -81,7 +78,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT=os.path.join(PROJECT_ROOT, 'static')
-
 
 
 FACEBOOK_EXTENDED_PERMISSIONS = ['email']
