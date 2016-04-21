@@ -8,7 +8,7 @@ from .models import Document, Course
 from django.core.urlresolvers import reverse
 from django.core.context_processors import csrf
 from haystack.query import SearchQuerySet
-from django.conf import settings
+
 def user_login(request):
 
   context = RequestContext(request)
@@ -40,7 +40,7 @@ def user_login(request):
     return render_to_response('login.html',{}, context)
 
 def register(request):
-    print settings.STATIC_ROOT
+
     if request.method == "POST":
         form = UserForm(request.POST)
         if form.is_valid():
