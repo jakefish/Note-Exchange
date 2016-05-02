@@ -113,8 +113,6 @@ def doc_form(request):
   return render(request,'doc_form.html',{'doc_form':doc_form})
 
 def search(request):
-  print "-----------"
-  print request.POST
   documents = SearchQuerySet().filter(content_auto=request.POST.get('search_text', ''))
 
   return render_to_response('ajax_search.html', {'documents' : documents})

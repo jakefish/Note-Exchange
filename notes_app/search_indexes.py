@@ -15,23 +15,24 @@ class DocumentIndex(indexes.SearchIndex, indexes.Indexable):
 
 
   def get_model(self):
-    print 2
-    print Document
+    print self.text
     return Document
 
   def index_queryset(self, using=None):
 
     #Used when entire index for model is updated.
-    print 1
+    print self.text
     return self.get_model().objects.all()
 
 class CourseIndex(indexes.SearchIndex, indexes.Indexable):
-    
+
     text = indexes.CharField(document=True, use_template=True)
 
-    
+
     def get_model(self):
+        print self.text
         return Course
-    
+
     def index_queryset(self):
+        print self.text
         return self.get_model().objects.all()
