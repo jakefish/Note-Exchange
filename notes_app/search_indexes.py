@@ -1,7 +1,10 @@
 import datetime
-from haystack import indexes
-from notes_app.models import Document, Course
 import itertools
+
+from notes_app.models import Document, Course
+from haystack import indexes
+
+
 
 class DocumentIndex(indexes.SearchIndex, indexes.Indexable):
 

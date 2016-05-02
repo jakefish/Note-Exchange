@@ -1,4 +1,5 @@
 from django.conf.urls import patterns, url
+
 from notes_app import views
 from models import Course, Document
 

@@ -3,3 +3,16 @@ django-haystack==2.4.1
 pefile==1.2.10.post114
 python-ptrace==0.8.1
 Whoosh==2.7.3
+PyJWT==1.4.0
+django-extensions==1.6.1
+django-happenings==0.3.3
+oauthlib==1.0.3
+pydot==1.0.2
+pyparsing==1.5.7
+python-openid==2.2.5
+python-social-auth==0.2.18
+pytz==2016.3
+requests==2.9.1
+requests-oauthlib==0.6.1
+six==1.10.0
+winappdbg==1.5
